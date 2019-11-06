@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- TODO Remove the following "exclude" elements to make them a part of the auto backup -->
+    <!-- Exclude the shared preferences file that contains the GCM registrationId -->
+    <exclude
+        domain="sharedpref"
+        path="profile.xml" />
+    <exclude
+        domain="sharedpref"
+        path="logon.xml" />
+    <exclude
+        domain="sharedpref"
+        path="myimei.xml" />
+    <exclude
+        domain="sharedpref"
+        path="KYCDocs.xml" />
+    <exclude
+        domain="sharedpref"
+        path="KycDocType.xml" />
+    <exclude
+        domain="sharedpref"
+        path="registration.xml" />
+</full-backup-content>

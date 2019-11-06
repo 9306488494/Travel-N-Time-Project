@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_brown2"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/group_name"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/dr"
+            android:textColor="@color/drawable_red"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/owner"
+            android:textSize="11dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/group_desc"
+            android:textSize="12dp"
+            android:fontFamily="@font/dr"
+            android:textColor="@color/drawable_red"
+            android:layout_marginTop="7dp"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="5dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/reg"
+            android:background="@drawable/doublerounded3"
+            android:id="@+id/group_btn_1" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/reg"
+            android:background="@drawable/doublerounded3_green"
+            android:id="@+id/group_btn_2"/>
+    </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:id="@+id/new_tag"
+        android:visibility="gone"
+        android:src="@drawable/new_tag"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/green_tag"
+        android:visibility="gone"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/right_tags"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_count"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:drawableLeft="@drawable/user"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chat_tag"
+        android:visibility="gone"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/right_tags"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chat_text"
+            android:textStyle="bold"
+            android:text="Chat"
+            android:textSize="14dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+</FrameLayout>

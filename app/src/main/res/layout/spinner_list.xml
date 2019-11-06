@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<TextView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/text1"
+    android:textColor="@color/white"
+    android:layout_marginLeft="10dp"
+    android:ellipsize="marquee"
+    android:backgroundTint="@color/white"
+    android:textColorHint="@color/white"
+    android:shadowColor="@color/white"
+    android:textColorLink="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android" />
+

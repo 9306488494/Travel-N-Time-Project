@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/minigames_background"
+    android:orientation="vertical">
+
+
+
+ <FrameLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:background="@drawable/r_roulette_girl">
+
+
+    <ImageView
+        android:id="@+id/rot"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        app:srcCompat="@drawable/rol" />
+
+    <ImageView
+        android:id="@+id/pointer"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/rot"
+        android:layout_marginBottom="140dp"
+        android:layout_marginLeft="29dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/pointer" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/nob" />
+
+
+     <EditText
+         android:id="@+id/bet"
+         android:layout_width="wrap_content"
+         android:layout_height="40dp"
+        android:layout_gravity="end|center"
+         android:layout_marginTop="90dp"
+         android:layout_marginRight="40dp"
+         android:paddingLeft="20dp"
+         android:background="@drawable/editbox_border2"
+         android:ems="6"
+         android:textSize="14dp"
+         android:maxLength="2"
+         android:inputType="number"
+         android:hint="Your No" />
+     <Button
+         android:id="@+id/button"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:background="@drawable/doublerounded3_green"
+         android:layout_gravity="end|bottom"
+         android:layout_marginBottom="30dp"
+         android:layout_marginRight="40dp"
+         android:text="SPIN" />
+
+     <ImageView
+         android:layout_width="580dp"
+         android:layout_height="280dp"
+        android:layout_gravity="center"
+         android:visibility="gone"
+         android:id="@+id/game_won_img"
+         android:src="@drawable/game_won_popup"/>
+
+     <ImageView
+         android:layout_width="580dp"
+         android:layout_height="280dp"
+         android:layout_gravity="center"
+         android:visibility="gone"
+         android:id="@+id/game_lost_img"
+         android:src="@drawable/game_lost_popup"/>
+
+     <ImageView
+         android:layout_width="180dp"
+         android:layout_height="130dp"
+         android:visibility="gone"
+         android:id="@+id/game_won_btn"
+         android:src="@drawable/okay_button"
+         android:layout_gravity="center"
+         android:layout_marginTop="120dp"/>
+     <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/help"
+         android:src="@drawable/question_mark" />
+
+     <ImageView
+         android:layout_width="60dp"
+         android:layout_height="50dp"
+         android:layout_gravity="end"
+         android:visibility="gone"
+         android:id="@+id/star_tag"
+         android:src="@drawable/star_tags" />
+     <TextView
+         android:id="@+id/textView"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+        android:visibility="gone"
+         android:textSize="21dp"
+         android:layout_gravity="end"
+         android:layout_marginTop="10dp"
+         android:layout_marginRight="22dp"
+         android:textColor="@color/white"
+         android:textStyle="bold"
+         android:text="-:-" />
+
+ </FrameLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">TravelnTime</string>
+    <string name="titlte_mainAct">Book Your Travel Here</string>
+    <string name="flights">Flights</string>
+    <string name="title_activity_main2" tools:ignore="ExtraTranslation">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="service">The personalized services extended by us are as follows : \n International and Domestic Air Ticketing \n  Hotel/Resort/Guest House Accommodation (India and Abroad)  \n  Honeymoon Package Tours (India and Abroad) \n  Business Conferences \n  Leisure Package Tours  \n  Incentive and Group Tours \n  Event Management \n  Wildlife Safari Sanctuary and Adventure Tours \n  Passport and Visa Assistance \n  Foreign Exchange \n  Star Cruises \n  Transportation Arrangements (Car/Coaches)</string>
+    <string name="contact_address">LG 20, DT Mega Mall,  \n DLF Phase 1, Gurgaon Pin Code - 122002, \n Haryana, India Tel: + 91 124 4222401, 402, 403 \n E-mail : info@travelntime.com</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+</resources>

@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:id="@+id/prodImg"
+                android:scaleType="fitXY"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/shareImg"
+                    android:alpha="0.8"
+                    app:srcCompat="@drawable/share"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Starting Budget"
+                    android:textColor="@color/white"
+                    android:textSize="13dp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginBottom="110dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/startingBudget"
+                    android:gravity="center"
+                    android:text="Loading..."
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginBottom="95dp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="end|bottom"
+                    android:background="@drawable/double_rounded"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:drawableLeft="@drawable/call"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="15dp"
+                    android:layout_marginRight="5dp"
+                    android:alpha="0.7"
+                    android:id="@+id/callUs"
+                    android:text="Book Now"/>
+
+            </FrameLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/titletxt"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:text="Loading"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="3dp"
+                android:fontFamily="@font/reg"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtLocation"
+                android:textSize="15dp"
+                android:text="Loading"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/reg"/>
+
+
+            <!--circle options-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:weightSum="3"
+                android:layout_marginTop="10dp">
+                <!--circle 1-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/circle1_lay"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/circle_button"
+                android:gravity="center"
+                android:id="@+id/c1"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    app:srcCompat="@drawable/photos"/>
+            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/circleTxt1"
+                        android:textSize="13dp"
+                        android:textColor="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:text="Loading.."/>
+                </LinearLayout>
+                <!--circle 2-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/circle2_lay"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/circle_button"
+                        android:gravity="center"
+                        android:id="@+id/c2"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            app:srcCompat="@drawable/facility"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/circleTxt2"
+                        android:textSize="13dp"
+                        android:textColor="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:text="Loading.."/>
+                </LinearLayout>
+                <!--circle 3-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/circle3_lay"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/circle_button"
+                        android:gravity="center"
+                        android:id="@+id/c3"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            app:srcCompat="@drawable/review"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/circleTxt3"
+                        android:textSize="13dp"
+                        android:textColor="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:text="Loading.."/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- contain Review , facilities-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                app:cardElevation="4dp"
+                android:id="@+id/facility_lay"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                app:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="4dp"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/drawable_red"
+                        android:background="@color/drawable_red">
+                    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@color/light_brown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Loading..."
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:id="@+id/facilityTxtTitle"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <!--Facility circle 1 flight-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/f_lay1"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/circle_30_40"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            app:srcCompat="@drawable/flight"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/facility_circle_1"
+                        android:textSize="13dp"
+                        android:textColor="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:text="Loading.."/>
+                </LinearLayout>
+                <!--Facility circle 2 cab-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:id="@+id/f_lay2"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/circle_30_40"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            app:srcCompat="@drawable/cab"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/facility_circle_2"
+                        android:textSize="13dp"
+                        android:textColor="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:text="Loading.."/>
+                </LinearLayout>
+                <!--Facility circle 3 bed-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:id="@+id/f_lay3"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/circle_30_40"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            app:srcCompat="@drawable/bed"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/facility_circle_3"
+                        android:textSize="13dp"
+                        android:textColor="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:text="Loading.."/>
+                </LinearLayout>
+                <!--Facility circle 4 meal-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/f_lay4"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/circle_30_40"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            app:srcCompat="@drawable/meal"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/facility_circle_4"
+                        android:textSize="13dp"
+                        android:textColor="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:text="Loading.."/>
+                </LinearLayout>
+                <!--Facility circle 5 sightseen-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/f_lay5"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/circle_30_40"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            app:srcCompat="@drawable/scope"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/facility_circle_5"
+                        android:textSize="13dp"
+                        android:textColor="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:text="Loading.."/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:text="Loading"
+                    android:textSize="13dp"
+                    android:textColor="@color/black"
+                    android:id="@+id/faciltySubTxt"/>
+            </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- OverView-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/card_overview">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="4dp"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/drawable_red"
+                        android:background="@color/drawable_red">
+                    </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Overview"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/reg"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtDesc"
+                    android:text="Loading.."
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:maxLength="200"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="read more..."
+                        android:textSize="15dp"
+                        android:textColor="@color/drawable_light_red"
+                        android:textStyle="bold"
+                        android:id="@+id/readMore"/>
+                </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+<!--Reviews-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="4dp"
+                app:cardPreventCornerOverlap="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                app:cardBackgroundColor="@color/light_brown"
+                android:id="@+id/review_lay1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:id="@+id/overview"
+                    android:textColor="@color/black"
+                    android:text="User Comments"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/reg"/>
+
+                <ScrollView android:layout_marginTop="15dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="300dp"
+                    android:id="@+id/scrollView1">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/review_rec">
+                </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
+
+                </ScrollView>
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

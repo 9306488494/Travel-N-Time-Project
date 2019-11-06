@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+xmlns:android="http://schemas.android.com/apk/res/android">
+
+<corners android:bottomRightRadius="55dp" android:bottomLeftRadius="55dp"></corners>
+<gradient android:centerColor="@color/drawable_red" android:gradientRadius="40dp" android:endColor="@color/drawable_light_red" android:startColor="@color/drawable_light_red"></gradient>
+
+<stroke android:width="2dp" android:dashGap="2dp" android:color="@color/drawable_light_red"></stroke>
+<size android:width="25dp" android:height="10dp"></size>
+<padding android:bottom="5dp" android:left="5dp" android:right="5dp" android:top="2dp"></padding>
+
+
+</shape>

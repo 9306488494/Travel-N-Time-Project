@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/drawable_red">
+
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/logo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/customtitlebar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingLeft="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white"
+        android:text="Title Name"
+        android:padding="3px"
+        android:textStyle="bold"
+        android:textSize="14dp"
+        android:layout_toRightOf="@id/icon"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"/>
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/drawable_red"
+        android:layout_below="@id/icon"><!-- This is line below the title -->
+    </ImageView>
+
+</RelativeLayout>

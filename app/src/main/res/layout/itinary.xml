@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_brown"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/eighteen_sp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:text="Loading..."
+            android:fontFamily="@font/reg"
+            android:paddingLeft="5dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:id="@+id/F2current_date"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/F2Hotel_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:text="Loading..."
+            android:textColor="@color/black"
+            android:textSize="@dimen/sixteen_sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/F2check_in"
+            android:text="Loading..."
+            android:textColor="@color/black"
+            android:textSize="10dp"
+            android:paddingLeft="5dp"/>
+        <!--Button and image of flight-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!--Buttons and the download and view-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/F2card_btn"
+                    android:visibility="gone"
+                    android:layout_marginLeft="2dp"
+                    app:cardElevation="2dp"
+                    android:backgroundTint="@color/dark_green"
+                    android:layout_marginTop="30dp"
+                    app:cardCornerRadius="4dp">
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:fontFamily="@font/dr"
+                        android:textStyle="bold"
+                        android:id="@+id/F2status_txt"
+                        android:gravity="center"
+                        android:text="Loading.."/>
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/F1card_btn2"
+                    android:visibility="gone"
+                    android:layout_marginLeft="2dp"
+                    app:cardElevation="2dp"
+                    android:backgroundTint="@color/drawable_red"
+                    android:layout_marginTop="30dp"
+                    app:cardCornerRadius="4dp">
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:fontFamily="@font/dr"
+                        android:textStyle="bold"
+                        android:id="@+id/F1status_txt2"
+                        android:gravity="center"
+                        android:text="Loading.."/>
+                </android.support.v7.widget.CardView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:id="@+id/F2download"
+                        android:textColor="@color/drawable_red"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:text="Loading..."/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="|"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/drawable_red"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:id="@+id/F2view"
+                        android:text="Property"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="|"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:textSize="14dp"
+                        android:id="@+id/F3show"
+                        android:text="Show"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_width="180dp"
+                    android:layout_height="90dp"
+                    android:id="@+id/F2img"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_brown"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:backgroundTint="#E9F7F5"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/F1LatestOrder"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableRight="@drawable/downarrow"
+            android:textColor="@color/dark_green"
+            android:text="Latest"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:id="@+id/tab1_rec1">
+
+    </android.support.v7.widget.RecyclerView>
+<!--Old orders banner clickable-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_brown"
+        android:layout_gravity="center"
+        android:backgroundTint="#E9F7F5"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/F1Oldorders"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableRight="@drawable/downarrow"
+            android:textColor="@color/dark_green"
+            android:text="Old"/>
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:id="@+id/tab1_rec2">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

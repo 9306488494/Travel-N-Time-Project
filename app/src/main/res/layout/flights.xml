@@ -1,0 +1,1537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/flight_back4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/drawable_red">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/title"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:text="Loading"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/options_lay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="5dp"
+    android:text="One way"
+    android:layout_weight="1"
+    android:textColor="@color/white"
+    android:textSize="15dp"
+    android:drawableLeft="@drawable/flight"
+    android:drawableTint="@color/white"
+    android:paddingLeft="5dp"
+    android:background="@drawable/thin_border_double_rounded"
+    android:id="@+id/one_way_btn"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="5dp"
+        android:text="Return"
+        android:drawableLeft="@drawable/return_flight"
+        android:paddingLeft="5dp"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:background="@drawable/thin_border_double_rounded"
+        android:id="@+id/return_btn"/>
+        </LinearLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Multi City"
+        android:drawableLeft="@drawable/multi_city"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:paddingLeft="20dp"
+        android:background="@drawable/thin_border_double_rounded"
+        android:id="@+id/multi_city"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:drawableLeft="@drawable/calender"
+        android:paddingLeft="20dp"
+        android:layout_marginBottom="25dp"
+        android:text="Air Calender"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:background="@drawable/thin_border_double_rounded"
+        android:id="@+id/Air_calender"/>
+
+    </LinearLayout>
+
+
+    <!--One way Booking of fights-->
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/oneway_lay"
+        app:cardBackgroundColor="@color/trans_brown"
+        app:cardCornerRadius="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardPreventCornerOverlap="true">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="3dp"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            android:id="@+id/oneway_from"
+            android:hint="Leaving from(City/Airport)"
+            android:textColor="@color/drawable_red"
+            android:textColorHint="@color/drawable_red"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            android:textSize="17dp"/>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/border"
+            android:id="@+id/oneway_goto"
+            android:hint="Going To(City/Airport)"
+            android:textColor="@color/drawable_red"
+            android:textColorHint="@color/drawable_red"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            android:textSize="17dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/border"
+            android:layout_marginTop="5dp"
+            android:id="@+id/oneway_deptDate"
+            android:hint="Departure Date"
+            android:textColor="@color/drawable_red"
+            android:textColorHint="@color/drawable_red"
+            android:textStyle="bold"
+            android:inputType="date"
+            android:paddingLeft="10dp"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/traveler_text"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/drawable_red"
+            android:text="Travelers (upto 9 per booking)"/>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/drawable_red"
+                android:text="Adults(12+)"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/oneway_adult"
+                android:textColor="@color/drawable_red"
+                android:textColorHint="@color/drawable_red"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:textSize="17dp"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/drawable_red"
+                android:text="Childrens(2-11)"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/oneway_children"
+                android:textColor="@color/drawable_red"
+                android:textColorHint="@color/drawable_red"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:textSize="17dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/drawable_red"
+                    android:text="Infants(0-2)"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/oneway_infants"
+                    android:textColor="@color/drawable_red"
+                    android:textColorHint="@color/drawable_red"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="17dp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/drawable_red"
+                    android:text="Class"/>
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/oneway_class"
+                    android:textColor="@color/drawable_red"
+                    android:textColorHint="@color/drawable_red"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="17dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/thin_border_double_rounded"
+            android:id="@+id/oneway_searchBtn"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:layout_marginBottom="20dp"
+            android:text="Search"/>
+
+
+    </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+    <!--Return flights-->
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/return_lay"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/trans_brown"
+        app:cardCornerRadius="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardPreventCornerOverlap="true">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="3dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:id="@+id/return_from"
+                android:hint="Leaving from(City/Airport)"
+                android:textColor="@color/drawable_red"
+                android:textColorHint="@color/drawable_red"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:textSize="17dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/return_goto"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/border"
+                android:hint="Going To(City/Airport)"
+                android:textColor="@color/drawable_red"
+                android:textColorHint="@color/drawable_red"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:textSize="17dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/border"
+                android:layout_weight="1"
+                android:id="@+id/return_deptDate"
+                android:hint="Departure Date"
+                android:textColor="@color/drawable_red"
+                android:textColorHint="@color/drawable_red"
+                android:textStyle="bold"
+                android:inputType="date"
+                android:paddingLeft="10dp"
+                android:textSize="17dp"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@drawable/border"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:id="@+id/return_returnDate"
+                    android:hint="Return Date"
+                    android:textColor="@color/drawable_red"
+                    android:textColorHint="@color/drawable_red"
+                    android:textStyle="bold"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="17dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/return_Traveller_text"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/drawable_red"
+                android:text="Travelers (upto 9 per booking)"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/drawable_red"
+                        android:text="Adults(12+)"/>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/return_adult"
+                        android:textColor="@color/drawable_red"
+                        android:textColorHint="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:textSize="17dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/drawable_red"
+                        android:text="Childrens(2-11)"/>
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/return_children"
+                        android:textColor="@color/drawable_red"
+                        android:textColorHint="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:textSize="17dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/drawable_red"
+                        android:text="Infants(0-2)"/>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/return_infants"
+                        android:textColor="@color/drawable_red"
+                        android:textColorHint="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:textSize="17dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/drawable_red"
+                        android:text="Class"/>
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/return_class"
+                        android:textColor="@color/drawable_red"
+                        android:textColorHint="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:textSize="17dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/thin_border_double_rounded"
+                android:id="@+id/return_searchBtn"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:layout_marginBottom="20dp"
+                android:text="Search"/>
+
+
+        </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+    <!--multicity flights-->
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/multicity_lay1"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/trans_brown"
+        app:cardCornerRadius="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardPreventCornerOverlap="true">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="3dp"
+            android:orientation="vertical">
+            <!--multi lay1-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/multi_lay1">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:id="@+id/multi_from1"
+                android:hint="Leaving from(City/Airport)"
+                android:textColor="@color/drawable_red"
+                android:textColorHint="@color/drawable_red"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:textSize="17dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/multicity_goto1"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/border"
+                android:hint="Going To(City/Airport)"
+                android:textColor="@color/drawable_red"
+                android:textColorHint="@color/drawable_red"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:textSize="17dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border"
+                    android:id="@+id/multicity_deptDate1"
+                    android:hint="Departure Date"
+                    android:textColor="@color/drawable_red"
+                    android:textColorHint="@color/drawable_red"
+                    android:textStyle="bold"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="17dp"/>
+
+
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/multi_city_Traveller_text"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/drawable_red"
+                android:text="Travelers (upto 9 per booking)"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/drawable_red"
+                        android:text="Adults(12+)"/>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/multicity_adult1"
+                        android:textColor="@color/drawable_red"
+                        android:textColorHint="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:textSize="17dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/drawable_red"
+                        android:text="Childrens(2-11)"/>
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/multicity_children1"
+                        android:textColor="@color/drawable_red"
+                        android:textColorHint="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:textSize="17dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/drawable_red"
+                        android:text="Infants(0-2)"/>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/multicity_infants1"
+                        android:textColor="@color/drawable_red"
+                        android:textColorHint="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:textSize="17dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/drawable_red"
+                        android:text="Class"/>
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/multicity_class1"
+                        android:textColor="@color/drawable_red"
+                        android:textColorHint="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:textSize="17dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="horizontal">
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:gravity="center"
+                android:background="@drawable/ic_plus"
+                android:id="@+id/multicity_plus1"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:layout_marginBottom="20dp"/>
+                <Button
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:background="@drawable/ic_minus"
+                    android:id="@+id/multicity_minus1"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:layout_marginBottom="20dp"/>
+
+            </LinearLayout>
+            </LinearLayout>
+            <!--multi lay2-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:id="@+id/multi_lay2">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border"
+                    android:id="@+id/multi_from2"
+                    android:hint="Leaving from(City/Airport)"
+                    android:textColor="@color/drawable_red"
+                    android:textColorHint="@color/drawable_red"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="17dp"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/multicity_goto2"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border"
+                    android:hint="Going To(City/Airport)"
+                    android:textColor="@color/drawable_red"
+                    android:textColorHint="@color/drawable_red"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="17dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/border"
+                        android:id="@+id/multicity_deptDate2"
+                        android:hint="Departure Date"
+                        android:textColor="@color/drawable_red"
+                        android:textColorHint="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:inputType="date"
+                        android:paddingLeft="10dp"
+                        android:textSize="17dp"/>
+
+
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/multi_city_Traveller_text2"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/drawable_red"
+                    android:text="Travelers (upto 9 per booking)"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/drawable_red"
+                            android:text="Adults(12+)"/>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/multicity_adult2"
+                            android:textColor="@color/drawable_red"
+                            android:textColorHint="@color/drawable_red"
+                            android:textStyle="bold"
+                            android:paddingLeft="10dp"
+                            android:textSize="17dp"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/drawable_red"
+                            android:text="Childrens(2-11)"/>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/multicity_children2"
+                            android:textColor="@color/drawable_red"
+                            android:textColorHint="@color/drawable_red"
+                            android:textStyle="bold"
+                            android:paddingLeft="10dp"
+                            android:textSize="17dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/drawable_red"
+                            android:text="Infants(0-2)"/>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/multicity_infants2"
+                            android:textColor="@color/drawable_red"
+                            android:textColorHint="@color/drawable_red"
+                            android:textStyle="bold"
+                            android:paddingLeft="10dp"
+                            android:textSize="17dp"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/drawable_red"
+                            android:text="Class"/>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/multicity_class2"
+                            android:textColor="@color/drawable_red"
+                            android:textColorHint="@color/drawable_red"
+                            android:textStyle="bold"
+                            android:paddingLeft="10dp"
+                            android:textSize="17dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+                    <Button
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="30dp"
+                        android:gravity="center"
+                        android:background="@drawable/ic_plus"
+                        android:id="@+id/multicity_plus2"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:layout_marginBottom="20dp"/>
+                    <Button
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:background="@drawable/ic_minus"
+                        android:id="@+id/multicity_minus2"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:layout_marginBottom="20dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <!--multi lay4-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:id="@+id/multi_lay4">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border"
+                    android:id="@+id/multi_from4"
+                    android:hint="Leaving from(City/Airport)"
+                    android:textColor="@color/drawable_red"
+                    android:textColorHint="@color/drawable_red"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="17dp"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/multicity_goto4"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border"
+                    android:hint="Going To(City/Airport)"
+                    android:textColor="@color/drawable_red"
+                    android:textColorHint="@color/drawable_red"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="17dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/border"
+                        android:id="@+id/multicity_deptDate4"
+                        android:hint="Departure Date"
+                        android:textColor="@color/drawable_red"
+                        android:textColorHint="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:inputType="date"
+                        android:paddingLeft="10dp"
+                        android:textSize="17dp"/>
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/multi_city_Traveller_text4"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/drawable_red"
+                    android:text="Travelers (upto 9 per booking)"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/drawable_red"
+                            android:text="Adults(12+)"/>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/multicity_adult4"
+                            android:textColor="@color/drawable_red"
+                            android:textColorHint="@color/drawable_red"
+                            android:textStyle="bold"
+                            android:paddingLeft="10dp"
+                            android:textSize="17dp"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/drawable_red"
+                            android:text="Childrens(2-11)"/>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/multicity_children4"
+                            android:textColor="@color/drawable_red"
+                            android:textColorHint="@color/drawable_red"
+                            android:textStyle="bold"
+                            android:paddingLeft="10dp"
+                            android:textSize="17dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/drawable_red"
+                            android:text="Infants(0-2)"/>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/multicity_infants4"
+                            android:textColor="@color/drawable_red"
+                            android:textColorHint="@color/drawable_red"
+                            android:textStyle="bold"
+                            android:paddingLeft="10dp"
+                            android:textSize="17dp"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/drawable_red"
+                            android:text="Class"/>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/multicity_class4"
+                            android:textColor="@color/drawable_red"
+                            android:textColorHint="@color/drawable_red"
+                            android:textStyle="bold"
+                            android:paddingLeft="10dp"
+                            android:textSize="17dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+                    <Button
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="30dp"
+                        android:gravity="center"
+                        android:background="@drawable/ic_plus"
+                        android:id="@+id/multicity_plus4"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:layout_marginBottom="20dp"/>
+                    <Button
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:background="@drawable/ic_minus"
+                        android:id="@+id/multicity_minus4"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:layout_marginBottom="20dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <!--multi lay3-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:id="@+id/multi_lay3">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border"
+                    android:id="@+id/multi_from3"
+                    android:hint="Leaving from(City/Airport)"
+                    android:textColor="@color/drawable_red"
+                    android:textColorHint="@color/drawable_red"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="17dp"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/multicity_goto3"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border"
+                    android:hint="Going To(City/Airport)"
+                    android:textColor="@color/drawable_red"
+                    android:textColorHint="@color/drawable_red"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="17dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/border"
+                        android:id="@+id/multicity_deptDate3"
+                        android:hint="Departure Date"
+                        android:textColor="@color/drawable_red"
+                        android:textColorHint="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:inputType="date"
+                        android:paddingLeft="10dp"
+                        android:textSize="17dp"/>
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/multi_city_Traveller_text3"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/drawable_red"
+                    android:text="Travelers (upto 9 per booking)"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/drawable_red"
+                            android:text="Adults(12+)"/>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/multicity_adult3"
+                            android:textColor="@color/drawable_red"
+                            android:textColorHint="@color/drawable_red"
+                            android:textStyle="bold"
+                            android:paddingLeft="10dp"
+                            android:textSize="17dp"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/drawable_red"
+                            android:text="Childrens(2-11)"/>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/multicity_children3"
+                            android:textColor="@color/drawable_red"
+                            android:textColorHint="@color/drawable_red"
+                            android:textStyle="bold"
+                            android:paddingLeft="10dp"
+                            android:textSize="17dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/drawable_red"
+                            android:text="Infants(0-2)"/>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/multicity_infants3"
+                            android:textColor="@color/drawable_red"
+                            android:textColorHint="@color/drawable_red"
+                            android:textStyle="bold"
+                            android:paddingLeft="10dp"
+                            android:textSize="17dp"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/drawable_red"
+                            android:text="Class"/>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/multicity_class3"
+                            android:textColor="@color/drawable_red"
+                            android:textColorHint="@color/drawable_red"
+                            android:textStyle="bold"
+                            android:paddingLeft="10dp"
+                            android:textSize="17dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+                    <Button
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="30dp"
+                        android:gravity="center"
+                        android:background="@drawable/ic_plus"
+                        android:id="@+id/multicity_plus3"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:layout_marginBottom="20dp"/>
+                    <Button
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:background="@drawable/ic_minus"
+                        android:id="@+id/multicity_minus3"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:layout_marginBottom="20dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/thin_border_double_rounded"
+                android:id="@+id/multicity_searchBtn"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:layout_marginBottom="20dp"
+                android:text="Search"/>
+        </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+    <!--Air Calender-->
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Air_lay"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/trans_brown"
+        app:cardCornerRadius="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardPreventCornerOverlap="true">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="3dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:id="@+id/Air_from"
+                android:hint="Leaving from(City/Airport)"
+                android:textColor="@color/drawable_red"
+                android:textColorHint="@color/drawable_red"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:textSize="17dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/Air_goto"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/border"
+                android:hint="Going To(City/Airport)"
+                android:textColor="@color/drawable_red"
+                android:textColorHint="@color/drawable_red"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:textSize="17dp"/>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/drawable_red"
+                        android:text="Departure Month"/>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Air_Month"
+                        android:textColor="@color/drawable_red"
+                        android:textColorHint="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:textSize="17dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/drawable_red"
+                        android:text="Departure Year"/>
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Air_Year"
+                        android:textColor="@color/drawable_red"
+                        android:textColorHint="@color/drawable_red"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:textSize="17dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/thin_border_double_rounded"
+                android:id="@+id/Air_searchBtn"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:layout_marginBottom="20dp"
+                android:text="Search"/>
+
+
+        </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

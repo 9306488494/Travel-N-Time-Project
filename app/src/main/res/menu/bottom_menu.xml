@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item
+            android:id="@+id/travel"
+            android:icon="@drawable/flight"
+            android:title="Flight"
+            tools:ignore="HardcodedText" />
+
+
+        <item android:title="Trips"
+            android:id="@+id/trips"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/trip"
+            tools:ignore="HardcodedText" />
+
+        <item android:title="Profile"
+            android:id="@+id/profile"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/profile"
+            tools:ignore="HardcodedText" />
+
+        <item android:title="Go Social" android:id="@+id/social"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/social"
+            tools:ignore="HardcodedText" />
+</menu>
